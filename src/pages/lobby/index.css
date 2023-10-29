@@ -1,0 +1,41 @@
+.section {
+  padding: 16Px 0 19.5Px;
+  background-color: #ffffff;
+  box-shadow: 1Px 1Px 1Px 1.5Px #2c2c2c1a;
+  border-radius: 15Px;
+}
+.pos {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1.5Px;
+  bottom: 0;
+}
+.text {
+  margin-left: 16.5Px;
+  color: #000000;
+  font-size: 13.5Px;
+  font-family: SimHei;
+  line-height: 13.5Px;
+  letter-spacing: 1.5Px;
+}
+.divider {
+  margin-top: 12Px;
+  opacity: 0.35;
+  background-color: #696969;
+  height: 1.5Px;
+  border: solid 0.5Px #696969;
+}
+.group_2 {
+  margin-left: 15.5Px;
+  margin-top: 6.5Px;
+  line-height: 16.5Px;
+  text-align: center;
+}
+.font_1 {
+  font-size: 10.5Px;
+  font-family: SimHei;
+  letter-spacing: 1Px;
+  line-height: 16.5Px;
+  color: #000000;
+}
