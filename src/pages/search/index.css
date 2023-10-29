@@ -26,3 +26,7 @@
   color: #000000;
   line-height: 13Px;
 }
+
+.bg-linear {
+    background: linear-gradient(to bottom right, #8a9ece, #425b95);
+}

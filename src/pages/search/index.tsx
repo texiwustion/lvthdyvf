@@ -29,7 +29,7 @@ function SearchBox() {
     //     搜索
     //   </Button>
     // </div>
-    <div className="flex flex-row items-center input section space-x-31">
+    <div className="flex flex-row items-center input section space-x-31 m-t-6">
       <img
         className="image m-r-2"
         src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/653dad04ce83440011a57dd4/16985527248050756148.png"
@@ -41,14 +41,14 @@ function SearchBox() {
 
 function Box() {
   return (
-    <div className="m-4 p-4 bg-gray-200 rounded">
+    <div className="m-2 p-2 rounded">
       {/* <div className="flex justify-between mb-4">
         <div className="border-b-2 border-gray-500 font-bold">法律分类检索</div>
         <div className="border-b-2 border-gray-500 font-bold">案例分类检索</div>
       </div> */}
       <div className="grid gap-4 grid-cols-2">
-        <div className="bg-white p-4 rounded shadow">法律分类检索</div>
-        <div className="bg-white p-4 rounded shadow">案例分类检索</div>
+        <div className="center text-white bg-linear p-4 rounded-4 shadow-lg h164">法律分类检索</div>
+        <div className="center text-white bg-linear p-4 rounded-4 shadow-lg">案例分类检索</div>
       </div>
     </div>
   );
@@ -68,7 +68,7 @@ function ArticleBlock() {
     <div className="m-4 p-4 bg-white rounded shadow">
       <h2 className="text-xl font-bold mb-4">热门</h2>
       {hotSearches.map((search, index) => (
-        <p key={index} className="mb-2">
+        <p key={index} className="mb-2 m2 line-height-4">
           {search}
         </p>
       ))}
