@@ -35,3 +35,51 @@
   line-height: 18Px;
   letter-spacing: 2Px;
 }
+
+/* 案件信息 */
+
+.section {
+  padding: 22.5Px 15Px 0Px 18Px;
+  background-color: #e7e7e761;
+  box-shadow: -0Px 1.5Px #2c2c2c2e;
+  border-radius: 12.5Px 12.5Px 0Px 0Px;
+}
+.section_2 {
+  padding: 16Px 12.5Px 16Px 23.5Px;
+  background-color: #ffffff;
+  /* box-shadow: -0Px 1.5Px #2c2c2c1a; */
+  border-radius: 15Px;
+  height: 62Px;
+}
+.space-x-14 > *:not(:first-child) {
+  margin-left: 7Px;
+}
+.image {
+  width: 50.5Px;
+  height: 50.5Px;
+}
+.group {
+  margin-top: 13.5Px;
+  line-height: 16.5Px;
+  /* text-align: center; */
+  /* width: 49.5Px; */
+  height: 28.5Px;
+}
+.font_1 {
+  font-size: 12.5Px;
+  font-family: SimHei;
+  letter-spacing: 1.5Px;
+  line-height: 16.5Px;
+  color: #000000;
+}
+.text-wrapper_3 {
+  padding: 16Px 0;
+  background-color: #ffffff;
+  box-shadow: -0Px 1.5Px #2c2c2c1a;
+  border-radius: 15Px;
+  height: 62Px;
+}
+.text_3 {
+  margin-left: 15.5Px;
+  line-height: 11.5Px;
+}

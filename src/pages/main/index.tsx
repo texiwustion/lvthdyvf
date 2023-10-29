@@ -1,4 +1,4 @@
-import { View, Text, Button } from "@tarojs/components";
+import { View, Button, Image, Text } from "@tarojs/components";
 import { useLoad } from "@tarojs/taro";
 import "./index.css";
 import { useRef, useState } from "react";
@@ -20,7 +20,7 @@ function BaseText() {
       <View className="flex">
         <InnerView />
       </View>
-      <div className="b-4px h200 b-t-black overflow-scroll overscroll-y-auto">
+      <div className="b-4px b-t-black overflow-scroll overscroll-y-auto">
         {data.map(({ id, text }) => (
           <InnerContent key={id} id={id} text={text} />
         ))}
@@ -60,19 +60,23 @@ function InnerView() {
 
 function InnerContent({ id, text }) {
   return (
-    <div className="m4 b-solid h-auto b-black flex">
-      <div className="w-2/5 b-r b-black p-2 flex">
-        <span className="b-solid rd w90 h90 rounded-full flex justify-center items-center">
-          HZ
-        </span>
-        <div>
-          <div>祯哥</div>
-          <div>武汉大学</div>
+ <div className="flex flex-row section">
+      <div className="flex shrink-0 relative section_2 space-x-14 w-1/3">
+        <img
+          className=" self-center image"
+          src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/653dad04ce83440011a57dd4/16985527248785418109.png"
+        />
+        <div className="self-start group w-2/3">
+          <span className="font_1">
+            xxx
+            <br />
+          </span>
+          <span className="font_1">xxx大学</span>
         </div>
       </div>
-      <div className="p-2">
-        <div>{id} 案件</div>
-        <div>{text}</div>
+      <div className="flex-col justify-start items-start flex-auto text-wrapper_3">
+        <span className="font_1 text_3">{id}<br /></span>
+        <span className="font_1 text_3">{text}</span>
       </div>
     </div>
   );
