@@ -19,3 +19,19 @@
     background: linear-gradient(to bottom right, #849bcc, #3b5799);
     font-family: "楷体","楷体_GB2312"
 }
+
+.text-wrapper_2 {
+  padding: 15Px 0;
+  background-image: url('https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/653dad04ce83440011a57dd4/16985527248288431220.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 237Px;
+}
+.text_2 {
+  margin-left: 42Px;
+  color: #ffffff;
+  font-size: 19Px;
+  font-family: SimHei;
+  line-height: 18Px;
+  letter-spacing: 2Px;
+}

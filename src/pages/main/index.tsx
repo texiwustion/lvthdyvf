@@ -52,8 +52,8 @@ function ButtonComponent() {
 
 function InnerView() {
   return (
-    <View className="float-revert text-2xl b-l-4 b-t-4 b-l-black b-t-black relative w-1_2 trapsode">
-      我的咨询
+    <View className="flex-col justify-start items-start self-start text-wrapper_2">
+      <Text className="text_2">我的咨询</Text>
     </View>
   );
 }
