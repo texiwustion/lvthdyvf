@@ -13,21 +13,28 @@ function SearchBox() {
   const handleSearch = () => {};
 
   return (
-    <div className="center m-4 h100">
-      <input
-        type="input"
-        className="p-2 border b-solid border-gray-300 rounded"
-        placeholder="搜索..."
-        value={searchTerm}
-        onChange={handleChange}
+    // <div className="center m-4 h100">
+    //   <input
+    //     type="input"
+    //     className="p-2 border b-solid border-gray-300 rounded"
+    //     placeholder="搜索..."
+    //     value={searchTerm}
+    //     onChange={handleChange}
+    //   />
+    //   <Button
+    //     className="p-2 text-sm font-bold rounded-1/2 center h100 w100"
+    //     type="primary"
+    //     onClick={handleSearch}
+    //   >
+    //     搜索
+    //   </Button>
+    // </div>
+    <div className="flex flex-row items-center input section space-x-31">
+      <img
+        className="image m-r-2"
+        src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/653dad04ce83440011a57dd4/16985527248050756148.png"
       />
-      <Button
-        className="p-2 text-sm font-bold rounded-1/2 center h100 w100"
-        type="primary"
-        onClick={handleSearch}
-      >
-        搜索
-      </Button>
+      <input placeholder="检索法律条文" className="font_1 text text_2" />
     </div>
   );
 }
@@ -75,7 +82,6 @@ export default function Search() {
 
   return (
     <View className="search">
-      <Text>Hello world!</Text>
       <SearchBox />
       <Box />
       <ArticleBlock />

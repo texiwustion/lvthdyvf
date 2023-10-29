@@ -1,0 +1,28 @@
+.input {
+  margin-right: 7Px;
+}
+.section {
+  padding: 6.5Px 8.5Px;
+  background-color: #ffffff;
+  box-shadow: -0Px 1.5Px #2c2c2c1a;
+  border-radius: 15Px;
+}
+.space-x-31 > *:not(:first-child) {
+  margin-left: 15.5Px;
+}
+.image {
+  width: 20Px;
+  height: 20Px;
+}
+.font_1 {
+  font-size: 14Px;
+  font-family: SimHei;
+  letter-spacing: 1.5Px;
+}
+.text {
+  opacity: 0.76;
+}
+.text_2 {
+  color: #000000;
+  line-height: 13Px;
+}
