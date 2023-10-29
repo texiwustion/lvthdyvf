@@ -2,7 +2,6 @@ import { View, Text, Button } from "@tarojs/components";
 import { useLoad } from "@tarojs/taro";
 import "./index.css";
 import { useRef, useState } from "react";
-import { Header } from "@/components/Header";
 
 function BaseText() {
   const data = [
@@ -12,10 +11,12 @@ function BaseText() {
   ];
   return (
     <div className="base-text">
-      <Header />
       <div className="text-2xl m4">免费一对一匹配H</div>
       <div className="text-1xl m4">在线免费匹配在校法学生一对一回答问题</div>
-      <ButtonComponent />
+      <div className="center">
+        <ButtonComponent />
+      </div>
+      
       <View className="flex">
         <InnerView />
       </View>
@@ -41,17 +42,11 @@ function ButtonComponent() {
   }
 
   return (
-    <div className="center">
-      <Button
-        ref={refMap}
-        className="border b-solid m4 flex justify-center items-center text-4xl w300 h300 relative"
-        type={mapButtonType}
-        style={{ borderRadius: "50%" }}
-        onClick={handleMap}
-      >
-        {!isMapping ? "匹配" : "停止匹配"}
-      </Button>
+  
+    <div className="outer-circle" onClick={handleMap}>
+      <div className="inner-circle center text-5xl">{!isMapping ? "匹配" : "停止匹配"}</div>
     </div>
+
   );
 }
 

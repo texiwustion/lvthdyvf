@@ -1,0 +1,21 @@
+.outer-circle {
+    position: relative;
+    box-sizing: border-box;
+    width: 200Px;
+    height: 200Px;
+    border-radius: 50%;
+    background-color: #96a7d2;
+    border: 10Px solid #b4c0dc;
+    box-shadow: 0 0 40Px #8195c9;
+}
+.inner-circle {
+    position: absolute;
+    box-sizing: border-box;
+    top: 10Px;
+    left: 10Px;
+    width: 160Px;
+    height: 160Px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, #849bcc, #3b5799);
+    font-family: "楷体","楷体_GB2312"
+}
