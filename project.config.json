@@ -2,7 +2,8 @@
   "miniprogramRoot": "./dist",
   "projectname": "taro_webpack5_react",
   "description": "taro webpack5 react",
-  "appid": "touristappid",
+  "cloudfunctionRoot": "cloud/",
+  "appid": "wx720c112c9b5e5421",
   "setting": {
     "urlCheck": true,
     "es6": false,
