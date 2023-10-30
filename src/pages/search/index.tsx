@@ -3,8 +3,7 @@ import { useLoad } from "@tarojs/taro";
 import "./index.css";
 import { useState } from "react";
 
-function SearchBox() {
-  const [searchTerm, setSearchTerm] = useState("");
+function SearchBox({searchTerm, setSearchTerm}) {
 
   const handleChange = event => {
     setSearchTerm(event.target.value);
@@ -29,12 +28,16 @@ function SearchBox() {
     //     搜索
     //   </Button>
     // </div>
-    <div className="flex flex-row items-center input section space-x-31 m-t-6">
+    <div className="flex flex-row items-center input section space-x-31 m-t-6 m-l-1 m-r-1">
       <img
         className="image m-r-2"
+        onClick={handleSearch}
         src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/653dad04ce83440011a57dd4/16985527248050756148.png"
       />
-      <input placeholder="检索法律条文" className="font_1 text text_2" />
+      <input placeholder="检索法律条文" 
+      value={searchTerm}
+      className="font_1 text text_2"
+      onChange={e => handleChange(e)} />
     </div>
   );
 }
@@ -54,7 +57,10 @@ function Box() {
   );
 }
 
-function ArticleBlock() {
+function ArticleBlock({setSearchTerm}) {
+  function handleClick(event, search) {
+    setSearchTerm(search);
+  }
   const hotSearches = [
     "React",
     "JavaScript",
@@ -68,23 +74,24 @@ function ArticleBlock() {
     <div className="m-4 p-4 bg-white rounded shadow">
       <h2 className="text-xl font-bold mb-4">热门</h2>
       {hotSearches.map((search, index) => (
-        <p key={index} className="mb-2 m2 line-height-4">
+        <div key={index} className="mb-2 m2 line-height-8" onClick={e=>handleClick(e, search)}>
           {search}
-        </p>
+        </div>
       ))}
     </div>
   );
 }
 export default function Search() {
+  const [searchTerm, setSearchTerm] = useState("");
   useLoad(() => {
     console.log("Page loaded.");
   });
 
   return (
     <View className="search">
-      <SearchBox />
+      <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <Box />
-      <ArticleBlock />
+      <ArticleBlock setSearchTerm={setSearchTerm} />
     </View>
   );
 }
