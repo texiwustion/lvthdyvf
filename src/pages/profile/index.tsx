@@ -33,12 +33,12 @@ function UserCard({ avatar, nickname, uid }) {
 
 function Box() {
   return (
-    <div className="m-4 p-4 bg-gray-200 rounded">
+    <div className="m-4 p-4 rounded-4">
       <ul className="space-y-4">
-        <li className="bg-white p-4 rounded shadow">VIP</li>
-        <li className="bg-white p-4 rounded shadow">案件处理进度</li>
-        <li className="bg-white p-4 rounded shadow">设置</li>
-        <li className="bg-white p-4 rounded shadow">收藏</li>
+        <li className="bg-white p-4 rounded-4 shadow">VIP</li>
+        <li className="bg-white p-4 rounded-4 shadow">案件处理进度</li>
+        <li className="bg-white p-4 rounded-4 shadow">设置</li>
+        <li className="bg-white p-4 rounded-4 shadow">收藏</li>
       </ul>
     </div>
   );
