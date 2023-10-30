@@ -1,6 +1,6 @@
-import 'uno.css'
 import { Component, PropsWithChildren } from 'react'
 import './app.css'
+import 'uno.css'
 
 class App extends Component<PropsWithChildren<any>> {
 
