@@ -1,10 +1,18 @@
 import { Component, PropsWithChildren } from 'react'
 import './app.css'
 import 'uno.css'
+import Taro from '@tarojs/taro'
 
 class App extends Component<PropsWithChildren<any>> {
 
-  componentDidMount () {}
+  componentDidMount () {
+    if (process.env.TARO_ENV === 'weapp') {
+        Taro.cloud.init({
+            // env: '填写自己的云环境ID',
+            traceUser: true
+        })
+    }
+  }
 
   componentDidShow () {}
 
