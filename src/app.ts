@@ -8,7 +8,7 @@ class App extends Component<PropsWithChildren<any>> {
   componentDidMount () {
     if (process.env.TARO_ENV === 'weapp') {
         Taro.cloud.init({
-            // env: '填写自己的云环境ID',
+            env: 'zhen-2g23i0zxf8f9d036',
             traceUser: true
         })
     }
