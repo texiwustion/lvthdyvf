@@ -11,8 +11,8 @@ function BaseText() {
   ];
   return (
     <div className="base-text">
-      <div className="text-2xl m4">免费一对一匹配H</div>
-      <div className="text-1xl m4">在线免费匹配在校法学生一对一回答问题</div>
+      <div className="text-2xl m4 ft">免费一对一匹配</div>
+      <div className="text-1xl m4 ft">在线免费匹配在校法学生一对一回答问题</div>
       <div className="center">
         <ButtonComponent />
       </div>
@@ -43,8 +43,8 @@ function ButtonComponent() {
 
   return (
   
-    <div className="outer-circle" onClick={handleMap}>
-      <div className="inner-circle center text-5xl">{!isMapping ? "匹配" : "停止匹配"}</div>
+    <div className="outer-circle scale-80" onClick={handleMap}>
+      <div className="inner-circle center text-3xl text-white ft-2">{!isMapping ? "匹配" : "停止匹配"}</div>
     </div>
 
   );
@@ -52,7 +52,7 @@ function ButtonComponent() {
 
 function InnerView() {
   return (
-    <View className="flex-col justify-start items-start self-start text-wrapper_2">
+    <View className="flex-col justify-start items-start self-start text-wrapper_2 scale-80 relative right-50">
       <Text className="text_2">我的咨询</Text>
     </View>
   );
@@ -60,18 +60,18 @@ function InnerView() {
 
 function InnerContent({ id, text }) {
   return (
- <div className="flex flex-row section">
-      <div className="flex shrink-0 relative section_2 space-x-14 w-1/3">
+ <div className="flex flex-row section h160 m-b-5">
+      <div className="flex items-center relative section_2 space-x-14 w-2/5">
         <img
-          className=" self-center image"
+          className="m2 m-l-4 self-center image"
           src="https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/653dad04ce83440011a57dd4/16985527248785418109.png"
         />
-        <div className="self-start group w-2/3">
+        <div className="m2 m-l-0 w-3/5">
           <span className="font_1">
-            xxx
+            祯哥
             <br />
           </span>
-          <span className="font_1">xxx大学</span>
+          <span className="font_1">武汉大学</span>
         </div>
       </div>
       <div className="flex-col justify-start items-start flex-auto text-wrapper_3">

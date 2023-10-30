@@ -1,5 +1,6 @@
 export default defineAppConfig({
   pages: [
+    "pages/main/index",
     "pages/index/index",
     "pages/font/index",
     "pages/size/index",
@@ -9,7 +10,6 @@ export default defineAppConfig({
     "pages/shortcuts/index",
     "pages/color/index",
     "pages/directives/index",
-    "pages/main/index",
     "pages/lobby/index",
     "pages/profile/index",
     "pages/search/index",
@@ -23,12 +23,12 @@ export default defineAppConfig({
   },
   tabBar: {
     list: [
-      {
-        pagePath: "pages/index/index",
-        iconPath: "./static/首页.png",
-        selectedIconPath: "./static/首页.png",
-        text: "资源页"
-      },
+      // {
+      //   pagePath: "pages/index/index",
+      //   iconPath: "./static/首页.png",
+      //   selectedIconPath: "./static/首页.png",
+      //   text: "资源页"
+      // },
       {
         pagePath: "pages/main/index",
         iconPath: "./static/首页.png",
