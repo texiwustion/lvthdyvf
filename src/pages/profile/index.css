@@ -1,0 +1,26 @@
+.section_2 {
+  padding: 41.5px 19.5px;
+  filter: drop-shadow(-1px 1.5px #2c2c2c1a);
+  background-image: url('https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/653dad04ce83440011a57dd4/16985494539891233961.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.image_2 {
+  width: 57Px;
+  height: 57Px;
+}
+.pos {
+  position: absolute;
+  left: 19.5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.font_2 {
+  font-size: 30px;
+  font-family: SimHei;
+  letter-spacing: 1.5px;
+  color: #000000;
+}
+.text_2 {
+  line-height: 12.5px;
+}
