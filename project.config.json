@@ -1,5 +1,5 @@
 {
-  "miniprogramRoot": "./dist",
+  "miniprogramRoot": "dist/",
   "projectname": "taro_webpack5_react",
   "description": "taro webpack5 react",
   "cloudfunctionRoot": "cloud/",
@@ -10,7 +10,23 @@
     "enhance": false,
     "compileHotReLoad": false,
     "postcss": false,
-    "minified": false
+    "minified": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
   },
-  "compileType": "miniprogram"
+  "compileType": "miniprogram",
+  "libVersion": "3.1.5",
+  "srcMiniprogramRoot": "dist/",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
 }
