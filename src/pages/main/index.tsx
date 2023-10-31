@@ -2,6 +2,7 @@ import { View, Button, Image, Text } from "@tarojs/components";
 import { useLoad } from "@tarojs/taro";
 import "./index.css";
 import { useRef, useState } from "react";
+import Taro from "@tarojs/taro";
 
 function BaseText() {
   const data = [
@@ -81,10 +82,20 @@ function InnerContent({ id, text }) {
     </div>
   );
 }
-
+const getUserContext =  async () => {
+  await Taro.cloud.callFunction({
+    name: 'login',
+    data: {},
+  }).then(res => {
+    if (!res.result) console.log("login error");
+    else 
+      console.log(res.result['openid'])
+  })
+}
 export default function Main() {
-  useLoad(() => {
+  useLoad(async () => {
     console.log("Page loaded.");
+    await getUserContext();
   });
 
   return <BaseText />;
