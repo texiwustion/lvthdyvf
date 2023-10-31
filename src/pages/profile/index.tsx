@@ -1,7 +1,33 @@
 import { View, Text } from "@tarojs/components";
 import { useLoad } from "@tarojs/taro";
 import "./index.css";
+import Taro from "@tarojs/taro";
 
+const getUser = () => {
+  Taro.getUserProfile({
+    desc: "用于完善会员资料", // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+    success: res => {
+      // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+      console.log(res);
+    }
+  });
+};
+
+const getCode = () => Taro.login({ success: res => pushCodeBy(res) });
+const pushCodeBy = async (res: Taro.login.SuccessCallbackResult) => {
+  if (!res.code) return console.log("登录失败！" + res.errMsg);
+  await Taro.cloud
+    .callFunction({
+      name: "userLogin",
+      data: {
+        code: res.code
+      }
+    })
+    .then(res => {
+      if (!res.result) console.log("上传 code 失败");
+      else console.log("上传 code 成功");
+    });
+};
 function UserCard({ avatar, nickname, uid }) {
   return (
     // <div className="m-4 p-4 bg-white rounded shadow flex items-center">
@@ -22,6 +48,7 @@ function UserCard({ avatar, nickname, uid }) {
       <img
         className="image_2 relative left-24"
         src={avatar}
+        onClick={getCode}
       />
       <div className="font_2 text_2 relative left-100 bottom-10">
         <div className="m2">{nickname}</div>
@@ -56,10 +83,11 @@ export default function Profile() {
     uid: "123456"
   };
   const user2 = {
-    avatar: "https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/653dad04ce83440011a57dd4/16985494540162819140.png",
+    avatar:
+      "https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/653dad04ce83440011a57dd4/16985494540162819140.png",
     nickname: "Zhen Huang",
     uid: "425"
-  }
+  };
   return (
     <View className="profile">
       <UserCard {...user} />
