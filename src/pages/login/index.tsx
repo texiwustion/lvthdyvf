@@ -19,6 +19,11 @@ export default function Login() {
     if (username == "" || password == "") return false;
     return true;
   };
+
+  const checkRegisterData = () => {
+    if (Taro.getStorageSync("username") == username) return false;
+    return true;
+  };
   const handleLogin = async () => {
     if (!checkData()) {
       return Taro.showToast({
@@ -28,9 +33,6 @@ export default function Login() {
       });
     }
 
-    Taro.setStorageSync("username", username);
-    Taro.setStorageSync("password", password);
-
     if (pageTheme == "登录") {
       await Taro.showToast({
         title: `成功${pageTheme}`,
@@ -39,6 +41,12 @@ export default function Login() {
       });
       setTimeout(toMain, 1500);
     } else {
+      if (!checkRegisterData())
+        return Taro.showToast({
+          title: `请勿重复注册！`,
+          icon: "error",
+          duration: 1000
+        });
       await Taro.showModal({
         title: "提示",
         content: "注册成功！是否跳转到登录页？",
@@ -51,6 +59,8 @@ export default function Login() {
         }
       });
     }
+    Taro.setStorageSync("username", username);
+    Taro.setStorageSync("password", password);
   };
 
   return (
