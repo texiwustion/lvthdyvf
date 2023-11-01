@@ -1,9 +1,9 @@
 export default defineAppConfig({
   pages: [
+    "pages/main/index",
     "pages/unlogin/index",
     "pages/login/index",
     "pages/register/index",
-    "pages/main/index",
     "pages/index/index",
     "pages/font/index",
     "pages/size/index",
@@ -61,5 +61,8 @@ export default defineAppConfig({
     selectedColor: "#56abe4",
     backgroundColor: "#fff",
     borderStyle: "white"
+  },
+  usingComponents: {
+    iconfont: "@/components/iconfont/weapp/weapp"
   }
 });
