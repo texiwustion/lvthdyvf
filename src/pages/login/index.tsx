@@ -1,11 +1,12 @@
 import "./index.css";
 
 import { useState } from "react";
-import Taro from "@tarojs/taro";
+import Taro, { getCurrentInstance } from "@tarojs/taro";
 import { View, Input, Button } from "@tarojs/components";
 import classNames from "classnames";
 
-export default function Login({ _pageTheme }) {
+export default function Login() {
+  const _pageTheme = getCurrentInstance().router?.params.pageTheme;
   const [pageTheme, setPageTheme] = useState(_pageTheme);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

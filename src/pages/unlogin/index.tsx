@@ -25,8 +25,10 @@ function UnLogin() {
   );
 }
 
-const toLogin = () => Taro.navigateTo({ url: "/pages/login/index" });
-const toRegister = () => Taro.navigateTo({ url: "/pages/register/index" });
+const toLogin = () =>
+  Taro.navigateTo({ url: "/pages/login/index?pageTheme=登录" });
+const toRegister = () =>
+  Taro.navigateTo({ url: "/pages/login/index?pageTheme=注册" });
 export default function Login() {
   useLoad(() => {
     console.log("Page loaded.");
