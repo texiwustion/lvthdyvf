@@ -70,7 +70,7 @@ function UserCard({ avatar, nickname, uid }) {
 
 function Box() {
   return (
-    <div className="w-full center bg-grey-100 relative top-50rpx">
+    <div className="w-full center bg-grey relative top-50rpx">
       <div className="m-4 p-4 rounded-4 bg-white shadow-lg h-120rpx w-full bg-grey-200">
         <div className="flex no-wrap flex-justify-between items-center h-full">
           {listItems.map((item, index) => (
@@ -103,8 +103,8 @@ export default function Profile() {
     uid: "425"
   };
   return (
-    <View className="profile">
-      <View className="w-full bg-main-r h-400rpx "></View>
+    <View className="profile bg-slate-100">
+      <View className="w-full bg-gradient-to-br from-cyan-500 via-blue-400 to-#062366 h-400rpx "></View>
       <UserCard {...user} />
       <Box />
     </View>
