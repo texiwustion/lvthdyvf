@@ -5,17 +5,17 @@ import logo from "../../static/logo.png";
 import Taro from "@tarojs/taro";
 function UnLogin() {
   return (
-    <div className="flex justify-center items-center flex-col h-100vh ft">
-      <img className="h-60vh" src={logo} />
-      <div className="flex flex-justify-between">
+    <div className="flex flex-col justify-center items-center ft relative top-80rpx">
+      <img className="h-618rpx" src={logo} />
+      <div className="flex justify-around w-full">
         <button
-          className="relative bottom-80 h125 pd text-18Px bg-#062366 text-white rounded-2 cursor-pointer hover:op"
+          className="center relative top-80rpx w-200rpx h-80rpx pd text-28rpx bg-#062366 text-white rounded-2 cursor-pointer active:op"
           onClick={toRegister}
         >
           注册
         </button>
         <button
-          className="relative bottom-80 h125 pd text-18Px bg-#062366 text-white rounded-2 cursor-pointer hover:op"
+          className="center relative top-80rpx w-200rpx h-80rpx pd text-28rpx bg-#062366 text-white rounded-2 cursor-pointer active:op"
           onClick={toLogin}
         >
           登录
