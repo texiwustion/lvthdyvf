@@ -3,5 +3,6 @@
   "projectname": "taro_webpack5_react",
   "setting": {
     "compileHotReLoad": true
-  }
+  },
+  "libVersion": "3.1.4"
 }

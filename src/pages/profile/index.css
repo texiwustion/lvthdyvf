@@ -1,13 +1,13 @@
 .section_2 {
   padding: 41.5px 19.5px;
   filter: drop-shadow(-1px 1.5px #2c2c2c1a);
-  background-image: url('https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/653dad04ce83440011a57dd4/16985494539891233961.png');
+  background-image: url("https://codefun-proj-user-res-1256085488.cos.ap-guangzhou.myqcloud.com/653dad04ce83440011a57dd4/16985494539891233961.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 .image_2 {
-  width: 57Px;
-  height: 57Px;
+  width: 57px;
+  height: 57px;
 }
 .pos {
   position: absolute;
@@ -23,4 +23,11 @@
 }
 .text_2 {
   line-height: 12.5px;
+}
+
+.ft {
+  font-family: Arial, sans-serif;
+}
+.pd {
+  padding: 12px 24px;
 }

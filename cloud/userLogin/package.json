@@ -1,5 +1,6 @@
 {
-  "dependencies" :{
-    "wx-server-sdk":"*"
+  "dependencies": {
+    "request": "^2.88.2",
+    "wx-server-sdk": "*"
   }
 }

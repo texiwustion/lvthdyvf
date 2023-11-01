@@ -2,7 +2,7 @@ import { View, Button, Image, Text } from "@tarojs/components";
 import { useLoad } from "@tarojs/taro";
 import "./index.css";
 import { useRef, useState } from "react";
-import Taro from "@tarojs/taro";
+import Taro, { cloud } from "@tarojs/taro";
 
 function BaseText() {
   const data = [
@@ -17,7 +17,7 @@ function BaseText() {
       <div className="center">
         <ButtonComponent />
       </div>
-      
+
       <View className="flex">
         <InnerView />
       </View>
@@ -43,11 +43,11 @@ function ButtonComponent() {
   }
 
   return (
-  
     <div className="outer-circle scale-80" onClick={handleMap}>
-      <div className="inner-circle center text-3xl text-white ft-2">{!isMapping ? "匹配" : "停止匹配"}</div>
+      <div className="inner-circle center text-3xl text-white ft-2">
+        {!isMapping ? "匹配" : "停止匹配"}
+      </div>
     </div>
-
   );
 }
 
@@ -61,7 +61,7 @@ function InnerView() {
 
 function InnerContent({ id, text }) {
   return (
- <div className="flex flex-row section h160 m-b-5">
+    <div className="flex flex-row section h160 m-b-5">
       <div className="flex items-center relative section_2 space-x-14 w-2/5">
         <img
           className="m2 m-l-4 self-center image"
@@ -76,26 +76,30 @@ function InnerContent({ id, text }) {
         </div>
       </div>
       <div className="flex-col justify-start items-start flex-auto text-wrapper_3">
-        <span className="font_1 text_3">{id}<br /></span>
+        <span className="font_1 text_3">
+          {id}
+          <br />
+        </span>
         <span className="font_1 text_3">{text}</span>
       </div>
     </div>
   );
 }
-const getUserContext =  async () => {
-  await Taro.cloud.callFunction({
-    name: 'login',
-    data: {},
-  }).then(res => {
-    if (!res.result) console.log("login error");
-    else 
-      console.log(res.result['openid'])
-  })
-}
+const getUserContext = async () => {
+  await cloud
+    .callFunction({
+      name: "login",
+      data: {}
+    })
+    .then(res => {
+      if (!res.result) console.log("login error");
+      else console.log("成功");
+    });
+};
 export default function Main() {
   useLoad(async () => {
     console.log("Page loaded.");
-    await getUserContext();
+    // await getUserContext();
   });
 
   return <BaseText />;

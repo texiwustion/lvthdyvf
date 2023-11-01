@@ -22,7 +22,8 @@ export default defineConfig({
   shortcuts: [
     {
       "border-base": "border border-gray-500/10",
-      center: "flex justify-center items-center"
+      center: "flex justify-center items-center",
+      op: "opacticy: 0.7"
     }
   ],
   transformers: [

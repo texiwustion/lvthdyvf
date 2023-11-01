@@ -2,6 +2,7 @@ import { View, Text } from "@tarojs/components";
 import { useLoad } from "@tarojs/taro";
 import "./index.css";
 import Taro from "@tarojs/taro";
+import logo from "../../static/logo.png";
 
 const getUser = () => {
   Taro.getUserProfile({
@@ -71,6 +72,17 @@ function Box() {
   );
 }
 
+function UnLogin() {
+  return (
+    <div className="flex justify-center items-center flex-col h-100vh ft">
+      <img className="h-55vh" src={logo} />
+      <button className="relative bottom-20 pd h80 text-18Px bg-#062366 text-white rounded-2 cursor-pointer">
+        微信一键登录
+      </button>
+    </div>
+  );
+}
+
 export default function Profile() {
   useLoad(() => {
     console.log("Page loaded.");
@@ -90,6 +102,7 @@ export default function Profile() {
   };
   return (
     <View className="profile">
+      <UnLogin />
       <UserCard {...user} />
       <Box />
     </View>
