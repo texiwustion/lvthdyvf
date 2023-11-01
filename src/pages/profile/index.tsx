@@ -2,16 +2,16 @@ import { View, Text } from "@tarojs/components";
 import { useLoad } from "@tarojs/taro";
 import "./index.css";
 import Taro from "@tarojs/taro";
-import IconFont from "../../components/iconfont";
+import IconFont, { IconNames } from "../../components/iconfont/index.weapp";
 import logo from "../../static/logo.png";
 
-const listStyle = "text-20rpx";
+const listStyle = "text-24rpx";
 
-const listItems = [
-  { icon, name: "VIP" },
-  { icon, name: "案件处理进度" },
-  { icon, name: "收藏" },
-  { icon, name: "设置" }
+const listItems: { icon: IconNames; name: string }[] = [
+  { icon: "vip_vip-one", name: "VIP" },
+  { icon: "天平_balance-two", name: "案件处理进度" },
+  { icon: "星星_star", name: "收藏" },
+  { icon: "设置_setting-two", name: "设置" }
 ];
 const getUser = () => {
   Taro.getUserProfile({
@@ -70,13 +70,15 @@ function UserCard({ avatar, nickname, uid }) {
 
 function Box() {
   return (
-    <div className="w-full center bg-grey-100">
-      <div className="m-4 p-4 rounded-4 bg-white shadow-lg h-200rpx w-full bg-grey-200">
-        <div className="flex no-wrap flex-justify-between">
-          <div className={listStyle}>VIP</div>
-          <div className={listStyle}>案件处理进度</div>
-          <div className={listStyle}>设置</div>
-          <div className={listStyle}>收藏</div>
+    <div className="w-full center bg-grey-100 relative top-50rpx">
+      <div className="m-4 p-4 rounded-4 bg-white shadow-lg h-120rpx w-full bg-grey-200">
+        <div className="flex no-wrap flex-justify-between items-center h-full">
+          {listItems.map((item, index) => (
+            <div key={item.icon} className="center flex-col">
+              <IconFont name={item.icon} size={60} />
+              <div className={listStyle}>{item.name}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

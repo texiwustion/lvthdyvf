@@ -63,6 +63,6 @@ export default defineAppConfig({
     borderStyle: "white"
   },
   usingComponents: {
-    iconfont: "@/components/iconfont/weapp/weapp"
+    iconfont: "./components/iconfont/weapp/weapp"
   }
 });
