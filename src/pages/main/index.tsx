@@ -11,7 +11,7 @@ function BaseText() {
     { id: "A0003", text: "AK 2023ICPC WF" }
   ];
   return (
-    <div className="base-text">
+    <div className="base-text bg-slate-100">
       <div className="text-2xl m4 ft">免费一对一匹配</div>
       <div className="text-1xl m4 ft">在线免费匹配在校法学生一对一回答问题</div>
       <div className="center">

@@ -44,19 +44,18 @@ function Box() {
         //   <p>{card.text2}</p>
         // </div>
         <div key={index} className="flex flex-col m3 section h120">
-      <span className="self-start text">开发商跑路了怎么办？</span>
-      <div className="divider"></div>
-      <div className="self-start group_2">
-        <span className="font_1">
-          {card.text1}
-          <br />
-        </span>
-        <span className="font_1">{card.text2}</span>
-      </div>
-    </div>
+          <span className="self-start text">开发商跑路了怎么办？</span>
+          <div className="divider"></div>
+          <div className="self-start group_2">
+            <span className="font_1">
+              {card.text1}
+              <br />
+            </span>
+            <span className="font_1">{card.text2}</span>
+          </div>
+        </div>
       ))}
     </div>
-    
   );
 }
 export default function Lobby() {
@@ -65,7 +64,7 @@ export default function Lobby() {
   });
 
   return (
-    <View className="lobby">
+    <View className="lobby h-100vh bg-slate-100">
       <Box />
     </View>
   );
