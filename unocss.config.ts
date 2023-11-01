@@ -23,7 +23,9 @@ export default defineConfig({
     {
       "border-base": "border border-gray-500/10",
       center: "flex justify-center items-center",
-      op: "opacticy: 0.7"
+      op: "opacticy: 0.7",
+      "bg-main-r": "bg-gradient-to-r from-cyan-500 to-#062366",
+      "bg-main-l": "bg-gradient-to-l from-cyan-500 to-#062366"
     }
   ],
   transformers: [
