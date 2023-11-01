@@ -45,14 +45,14 @@ function UserCard({ avatar, nickname, uid }) {
     //     </button>
     //   </div>
     // </div>
-    <div className="flex items-center relative section_2">
+    <div className="center flex-col ">
       <img
-        className="image_2 relative left-24"
+        className="w-120rpx h-120rpx rounded-full relative bottom-40rpx"
         src={avatar}
         onClick={getCode}
       />
-      <div className="font_2 text_2 relative left-100 bottom-10">
-        <div className="m2">{nickname}</div>
+      <div className="font_2 text_2 relative">
+        <div className="m2 mb-30rpx">{nickname}</div>
         <div>UID: {uid}</div>
       </div>
     </div>
@@ -68,17 +68,6 @@ function Box() {
         <li className="bg-white p-4 rounded-4 shadow">设置</li>
         <li className="bg-white p-4 rounded-4 shadow">收藏</li>
       </ul>
-    </div>
-  );
-}
-
-function UnLogin() {
-  return (
-    <div className="flex justify-center items-center flex-col h-100vh ft">
-      <img className="h-55vh" src={logo} />
-      <button className="relative bottom-20 pd h80 text-18Px bg-#062366 text-white rounded-2 cursor-pointer">
-        微信一键登录
-      </button>
     </div>
   );
 }
@@ -102,7 +91,7 @@ export default function Profile() {
   };
   return (
     <View className="profile">
-      <UnLogin />
+      <View className="w-full bg-main-r h-400rpx "></View>
       <UserCard {...user} />
       <Box />
     </View>
