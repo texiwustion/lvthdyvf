@@ -17,7 +17,8 @@ export default defineAppConfig({
     "pages/profile/index",
     "pages/search/index",
     "pages/sourcepage/index",
-    "pages/settings/index"
+    "pages/settings/index",
+    "pages/vip/index"
   ],
   window: {
     backgroundTextStyle: "light",
