@@ -29,9 +29,21 @@ const toLogin = () =>
   Taro.navigateTo({ url: "/pages/login/index?pageTheme=登录" });
 const toRegister = () =>
   Taro.navigateTo({ url: "/pages/login/index?pageTheme=注册" });
+const toMain = (): void => {
+  Taro.switchTab({ url: "/pages/main/index" });
+};
 export default function Login() {
   useLoad(() => {
     console.log("Page loaded.");
+    const developerMode = Taro.getStorageSync("developerMode");
+    if (developerMode) {
+      Taro.showToast({
+        title: "免登录进入",
+        icon: "success",
+        duration: 1500
+      });
+      setTimeout(toMain, 1200);
+    }
   });
 
   return (

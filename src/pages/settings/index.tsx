@@ -5,9 +5,12 @@ import classNames from "classnames";
 import "./index.css";
 
 export default function Settings() {
-  const [developerMode, setDeveloperMode] = useState(false);
+  const [developerMode, setDeveloperMode] = useState<boolean>(
+    Taro.getStorageSync("developerMode")
+  );
 
   const handleSwitchChange = () => {
+    Taro.setStorageSync("developerMode", !developerMode);
     setDeveloperMode(!developerMode);
   };
 
