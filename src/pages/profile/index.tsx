@@ -7,12 +7,17 @@ import logo from "../../static/logo.png";
 
 const listStyle = "text-24rpx";
 
-const listItems: { icon: IconNames; name: string }[] = [
-  { icon: "vip_vip-one", name: "VIP" },
-  { icon: "天平_balance-two", name: "案件处理进度" },
-  { icon: "星星_star", name: "收藏" },
-  { icon: "设置_setting-two", name: "设置" }
+const listItems: { icon: IconNames; name: string; path: string }[] = [
+  { icon: "vip_vip-one", name: "VIP", path: "vip" },
+  { icon: "天平_balance-two", name: "案件处理进度", path: "process" },
+  { icon: "星星_star", name: "收藏", path: "save" },
+  { icon: "设置_setting-two", name: "设置", path: "settings" }
 ];
+const to = (name: string) => {
+  Taro.navigateTo({
+    url: `/pages/${name}/index`
+  });
+};
 const getUser = () => {
   Taro.getUserProfile({
     desc: "用于完善会员资料", // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
@@ -38,22 +43,9 @@ const pushCodeBy = async (res: Taro.login.SuccessCallbackResult) => {
       else console.log("上传 code 成功");
     });
 };
+
 function UserCard({ avatar, nickname, uid }) {
   return (
-    // <div className="m-4 p-4 bg-white rounded shadow flex items-center">
-    //   <div className="rounded-full bg-gray-300 flex items-center justify-center">
-    //     <img src={avatar} alt="用户头像" className="w-50 h-50 rounded-full" />
-    //   </div>
-    //   <div className="ml-4">
-    //     <h4 className="text-xl font-bold">{nickname}</h4>
-    //     <p className="text-gray-500">UID: {uid}</p>
-    //   </div>
-    //   <div className="center ml-auto">
-    //     <button className="p-2 bg-yellow-500 text-white font-bold rounded h100 center">
-    //       VIP
-    //     </button>
-    //   </div>
-    // </div>
     <div className="center flex-col ">
       <img
         className="w-120rpx h-120rpx rounded-full relative bottom-40rpx"
@@ -74,7 +66,11 @@ function Box() {
       <div className="m-4 p-4 rounded-4 bg-white shadow-lg h-120rpx w-full bg-grey-200">
         <div className="flex no-wrap flex-justify-between items-center h-full">
           {listItems.map((item, index) => (
-            <div key={item.icon} className="center flex-col">
+            <div
+              key={item.icon}
+              className="center flex-col"
+              onClick={() => to(item.path)}
+            >
               <IconFont name={item.icon} size={60} />
               <div className={listStyle}>{item.name}</div>
             </div>
