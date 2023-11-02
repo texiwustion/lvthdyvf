@@ -7,37 +7,33 @@ import "./index.css";
 export default function Settings() {
   const [developerMode, setDeveloperMode] = useState(false);
 
-  const handleSwitchChange = value => {
-    setDeveloperMode(value);
+  const handleSwitchChange = () => {
+    setDeveloperMode(!developerMode);
   };
 
   return (
-    <View className={classNames("p-4")}>
-      <View className={classNames("flex", "items-center", "mb-4")}>
-        <Text className={classNames("text-lg", "font-bold")}>开发者模式</Text>
+    <View className={classNames("p-4", "h-100vh", "bg-slate-100")}>
+      <View
+        className={classNames(
+          "flex",
+          "items-center",
+          "flex-justify-between",
+          "mb-4",
+          "h-100rpx",
+          "bg-white",
+          "rounded-2",
+          "shadow-lg",
+          "p-3",
+          "box-border"
+        )}
+      >
+        <Text className={classNames("text-35rpx")}>开发者模式(免登录)</Text>
         <Switch
-          className={classNames("ml-2")}
+          className={classNames("ml-2 scale-80")}
           checked={developerMode}
           onChange={handleSwitchChange}
           color="#10B981"
         />
-      </View>
-      <View className={classNames("flex", "items-center")}>
-        <View
-          className={classNames(
-            "w-8",
-            "h-8",
-            "rounded-full",
-            developerMode ? "bg-green-500" : "bg-gray-400",
-            "transition-all",
-            "duration-300",
-            "transform",
-            developerMode ? "translate-x-full" : "translate-x-0"
-          )}
-        />
-        <Text className={classNames("ml-2")}>
-          {developerMode ? "已开启" : "已关闭"}
-        </Text>
       </View>
     </View>
   );
